@@ -15,6 +15,24 @@ df.columns = (
     .str.replace(" ", "_")
     .str.replace("\t", "", regex=False)
 )
+# Clean weird characters from column names (tabs, quotes, dots)
+df.columns = (
+    df.columns.str.replace('"', "", regex=False)
+              .str.replace("\t", "", regex=False)
+              .str.replace(" ", "_")
+              .str.lower()
+              .str.strip()
+)
+
+# Fix inconsistent pollutant column names
+rename_map = {
+    "co_aqi_value": "co_aqi_value",
+    "ozone_aqi_value": "ozone_aqi_value",
+    "no2_aqi_value": "no2_aqi_value",
+    "pm2.5_aqi_value": "pm25_aqi_value"
+}
+
+df = df.rename(columns=rename_map)
 
 # --------------------------
 # Load Model + Encoders
