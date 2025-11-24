@@ -6,7 +6,17 @@ import pandas as pd
 # --------------------------
 # Load dataset
 # --------------------------
-df = pd.read_csv("global_air_pollution_data.csv")  
+df = pd.read_csv("global_air_pollution_data.csv") 
+# Clean country names
+df["country_name"] = df["country_name"].astype(str).str.strip()
+df = df[df["country_name"].str.lower() != "nan"]
+df = df[df["country_name"].str.strip() != ""]
+
+# Clean city names too
+df["city_name"] = df["city_name"].astype(str).str.strip()
+df = df[df["city_name"].str.lower() != "nan"]
+df = df[df["city_name"].str.strip() != ""]
+
 # Remove BOM, tabs, spaces, quotes from all column names
 df.columns = (
     df.columns
