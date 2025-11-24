@@ -7,6 +7,13 @@ import pandas as pd
 # Load dataset
 # --------------------------
 df = pd.read_csv("global_air_pollution_data.csv")  
+# Remove BOM, tabs, spaces, quotes from all column names
+df.columns = (
+    df.columns
+        .str.replace("\ufeff", "", regex=False)
+        .str.replace("\t", "", regex=False)
+        .str.strip()
+)
 
 # --------------------------
 # Load model + encoders
