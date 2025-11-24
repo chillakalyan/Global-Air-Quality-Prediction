@@ -1,6 +1,20 @@
 import streamlit as st
 import pickle
 import numpy as np
+import pandas as pd
+
+# --------------------------
+# Load Dataset (For Country → City filtering)
+# --------------------------
+df = pd.read_csv("global_air_pollution_data.csv")
+
+# Clean column names for safety
+df.columns = (
+    df.columns.str.strip()
+    .str.lower()
+    .str.replace(" ", "_")
+    .str.replace("\t", "", regex=False)
+)
 
 # --------------------------
 # Load Model + Encoders
@@ -17,10 +31,27 @@ le_city = encoders["le_city"]
 st.title("🌍 Global Air Quality Index (AQI) Prediction")
 st.write("Predict the Air Quality Index using pollutant AQI values + location.")
 
-# User Inputs
-country = st.selectbox("Select Country", le_country.classes_)
-city = st.selectbox("Select City", le_city.classes_)
+# --------------------------
+# Country Dropdown
+# --------------------------
+country = st.selectbox(
+    "Select Country",
+    sorted(df["country_name"].unique())
+)
 
+# --------------------------
+# City Dropdown Filtered by Country
+# --------------------------
+filtered_cities = df[df["country_name"] == country]["city_name"].unique()
+
+city = st.selectbox(
+    "Select City",
+    sorted(filtered_cities)
+)
+
+# --------------------------
+# Pollutant Inputs
+# --------------------------
 co = st.number_input("CO AQI Value", min_value=0.0)
 ozone = st.number_input("Ozone AQI Value", min_value=0.0)
 no2 = st.number_input("NO₂ AQI Value", min_value=0.0)
@@ -36,20 +67,32 @@ city_encoded = le_city.transform([city])[0]
 # Predict
 # --------------------------
 if st.button("Predict AQI"):
+    # Prepare feature array in the same order as training
     features = np.array([[co, ozone, no2, pm25, country_encoded, city_encoded]])
+    
     prediction = model.predict(features)[0]
+    prediction = round(prediction, 2)
 
-    # Display result
-    st.success(f"Predicted AQI: {round(prediction, 2)}")
+    # Display AQI number
+    st.success(f"Predicted AQI: {prediction}")
 
+    # --------------------------
     # Category Logic
+    # --------------------------
     def classify(aqi):
-        if aqi <= 50: return "Good"
-        elif aqi <= 100: return "Satisfactory"
-        elif aqi <= 200: return "Moderate"
-        elif aqi <= 300: return "Poor"
-        elif aqi <= 400: return "Very Poor"
-        else: return "Severe"
+        if aqi <= 50:
+            return "Good"
+        elif aqi <= 100:
+            return "Satisfactory"
+        elif aqi <= 200:
+            return "Moderate"
+        elif aqi <= 300:
+            return "Poor"
+        elif aqi <= 400:
+            return "Very Poor"
+        else:
+            return "Severe"
 
     category = classify(prediction)
     st.info(f"AQI Category: **{category}**")
+
