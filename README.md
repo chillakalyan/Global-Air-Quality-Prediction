@@ -1,3 +1,5 @@
+# 📘 Global Air Quality Prediction – AQI Predictor
+
 📘 Global Air Quality Prediction – AQI Predictor
 
 A machine-learning powered Streamlit web application that predicts the Air Quality Index (AQI) based on pollutant concentration values and geographical location (Country + City).
