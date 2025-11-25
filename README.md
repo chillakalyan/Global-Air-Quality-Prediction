@@ -33,18 +33,17 @@ This application predicts AQI using the following pollutant features:
 
 ## 📁 Repository Structure
 
+```
 Global-Air-Quality-Prediction/
 │
-
-├── .devcontainer/              # VSCode Devcontainer settings (optional)
-
-├── LICENSE                     # MIT license
-
-├── README.md                   # Project documentation
-├── aqi_model.pkl               # Trained XGBoost AQI prediction model
-├── encoders.pkl                # Label encoders for country & city
-├── aqi_notebook.ipynb          # Jupyter notebook used for training
+├── .devcontainer/                 # VSCode Dev Container (optional)
+├── LICENSE                        # MIT license
+├── README.md                      # Project documentation
+├── aqi_model.pkl                  # Trained XGBoost AQI prediction model
+├── encoders.pkl                   # Label encoders for country & city
+├── aqi_notebook.ipynb             # Jupyter notebook used for training
 ├── global_air_pollution_data.csv  # Historical dataset used for training
-├── requirements.txt            # Python dependencies
-└── streamlit_app.py            # Main Streamlit application
+├── requirements.txt               # Python dependencies
+└── streamlit_app.py               # Main Streamlit application
+```
 
