@@ -46,4 +46,71 @@ Global-Air-Quality-Prediction/
 ├── requirements.txt               # Python dependencies
 └── streamlit_app.py               # Main Streamlit application
 ```
+---
 
+## 📊 Dataset
+
+This project uses a global historical dataset containing pollutant concentrations and AQI values for multiple cities and countries.
+
+The dataset features include:
+
+- CO concentration  
+- O₃ concentration  
+- NO₂ concentration  
+- PM2.5 concentration  
+- AQI  
+- Country  
+- City
+
+
+---
+
+## 🧠 Model Details
+
+- **Model Type:** XGBoost Regressor  
+- **Training Code:** `aqi_notebook.ipynb`
+
+### **Input Features**
+| Feature | Type |
+|--------|------|
+| CO (ppb) | Numeric |
+| O₃ (ppb) | Numeric |
+| NO₂ (ppb) | Numeric |
+| PM2.5 (µg/m³) | Numeric |
+| Country | Label-encoded |
+| City | Label-encoded |
+
+### **Performance**
+- **MAE:** ~3 AQI points  
+- **Very stable** on validation  
+- **Fast inference** in Streamlit  
+
+---
+
+
+## ✨ Features
+
+- 🌐 Predict AQI for any supported city and country  
+- 📈 Input pollutant concentrations (with proper units)  
+- ⚡ Fast ML predictions using XGBoost  
+- 🎨 Clean & interactive Streamlit interface  
+- 🧩 Includes saved label encoders for consistent predictions  
+- 🔢 Converts output to AQI category  
+
+---
+
+## 🖥️ Installation
+
+### **1️⃣ Clone the repository**
+```bash
+git clone https://github.com/your-username/Global-Air-Quality-Prediction.git
+cd Global-Air-Quality-Prediction
+```
+### **2️⃣ Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+### **3️⃣ Run the application**
+```bash
+streamlit run streamlit_app.py
+```
