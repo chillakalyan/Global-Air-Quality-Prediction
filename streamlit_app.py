@@ -69,10 +69,10 @@ filtered_cities = sorted(df[df[country_col] == country][city_col].unique())
 city = st.selectbox("Select City", filtered_cities)
 
 # Numeric inputs
-co = st.number_input("CO AQI Value", min_value=0.0, value=0.0, step=1.0)
-ozone = st.number_input("Ozone AQI Value", min_value=0.0, value=0.0, step=1.0)
-no2 = st.number_input("NO₂ AQI Value", min_value=0.0, value=0.0, step=1.0)
-pm25 = st.number_input("PM2.5 AQI Value", min_value=0.0, value=0.0, step=1.0)
+co = st.number_input("Carbon Monoxide (CO) — ppb", min_value=0.0, value=0.0, step=1.0)
+ozone = st.number_input("Ozone (O₃) — ppb", min_value=0.0, value=0.0, step=1.0)
+no2 = st.number_input("Nitrogen Dioxide (NO₂) — ppb", min_value=0.0, value=0.0, step=1.0)
+pm25 = st.number_input("Particulate Matter (PM2.5) — µg/m³", min_value=0.0, value=0.0, step=1.0)
 
 # Encode and predict safely
 try:
