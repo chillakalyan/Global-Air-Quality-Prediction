@@ -101,15 +101,15 @@ The dataset features include:
 
 ## 📦 Requirements
 
-xgboost==2.1.1
-streamlit==1.32.0
-scikit-learn==1.7.2
-pandas==1.5.3
-numpy==1.23.5
-seaborn==0.12.2
-matplotlib==3.7.5
-pickle-mixin==1.0.2
-pillow==10.4.0
+- xgboost==2.1.1
+- streamlit==1.32.0
+- scikit-learn==1.7.2
+- pandas==1.5.3
+- numpy==1.23.5
+- seaborn==0.12.2
+- matplotlib==3.7.5
+- pickle-mixin==1.0.2
+- pillow==10.4.0
 
 ---
 
