@@ -5,7 +5,7 @@ A machine-learning powered Streamlit web application that predicts the Air Quali
 This project uses an XGBoost regression model, trained on historical global air-pollution datasets, along with Label Encoders for categorical features.
 The deployed Streamlit UI allows users to interactively enter pollutant levels and obtain the predicted AQI and its corresponding category.
 
-# 🌍 About the Project
+## 🌍 About the Project
 
 Air quality plays a critical role in public health, environmental monitoring, and policy-making.
 This project predicts AQI using the following pollutants:
@@ -27,6 +27,8 @@ The model outputs:
 Predicted AQI value
 
 AQI Category (Good, Satisfactory, Moderate, Poor, Very Poor, Severe)
+
+## 📁 Repository Structure
 
 Global-Air-Quality-Prediction/
 │
