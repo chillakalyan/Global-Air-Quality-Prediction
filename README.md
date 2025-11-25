@@ -1,32 +1,38 @@
 # 📘 Global Air Quality Prediction – AQI Predictor
 
-A machine-learning powered Streamlit web application that predicts the Air Quality Index (AQI) based on pollutant concentration values and geographical location (Country + City).
+[🚀 **Live Demo**](https://global-air-quality-prediction-nwkngwlkm7aq4apouo7mcp.streamlit.app/)
 
-This project uses an XGBoost regression model, trained on historical global air-pollution datasets, along with Label Encoders for categorical features.
-The deployed Streamlit UI allows users to interactively enter pollutant levels and obtain the predicted AQI and its corresponding category.
+A machine-learning powered **Streamlit web application** that predicts the **Air Quality Index (AQI)** based on pollutant concentrations and geographic location (Country + City).
+
+This project uses an **XGBoost regression model** trained on a historical global air-pollution dataset.  
+The app supports real-time user inputs for major pollutants (PM2.5, CO, NO₂, O₃), encodes location features, and predicts both:
+
+- **Numerical AQI Value**
+- **AQI Category** (Good, Satisfactory, Moderate, Poor, Very Poor, Severe)
+
+---
 
 ## 🌍 About the Project
 
-Air quality plays a critical role in public health, environmental monitoring, and policy-making.
-This project predicts AQI using the following pollutants:
+Air quality plays a vital role in public health and climate assessment.  
+This application predicts AQI using the following pollutant features:
 
-PM2.5 (µg/m³)
+### **Pollutants Used**
+- PM2.5 (µg/m³)
+- Carbon Monoxide – CO (ppb)
+- Nitrogen Dioxide – NO₂ (ppb)
+- Ozone – O₃ (ppb)
+- Country
+- City
 
-NO₂ (ppb)
+### **Model Outputs**
+- Predicted AQI value  
+- AQI Category (Good → Severe)
 
-Ozone O₃ (ppb)
+---
 
-Carbon Monoxide CO (ppb)
+## 📁 Repository Structure
 
-Country
-
-City
-
-The model outputs:
-
-Predicted AQI value
-
-AQI Category (Good, Satisfactory, Moderate, Poor, Very Poor, Severe)
 
 ## 📁 Repository Structure
 
