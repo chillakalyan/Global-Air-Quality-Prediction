@@ -34,10 +34,12 @@ This application predicts AQI using the following pollutant features:
 ## 📁 Repository Structure
 
 Global-Air-Quality-Prediction/
-
 │
+
 ├── .devcontainer/              # VSCode Devcontainer settings (optional)
+
 ├── LICENSE                     # MIT license
+
 ├── README.md                   # Project documentation
 ├── aqi_model.pkl               # Trained XGBoost AQI prediction model
 ├── encoders.pkl                # Label encoders for country & city
