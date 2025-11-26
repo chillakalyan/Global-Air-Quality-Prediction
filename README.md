@@ -67,7 +67,8 @@ The dataset features include:
 
 ## 🧠 Model Details
 
-- **Model Type:** XGBoost Regressor  
+- **Model Type:** XGBoost Regressor
+- **Model Size:** <1 MB
 - **Training Code:** `aqi_notebook.ipynb`
 
 ### **Input Features**
