@@ -82,7 +82,8 @@ The dataset features include:
 | City | Label-encoded |
 
 ### **Performance**
-- **MAE:** ~3 AQI points  
+- **MAE:** 2.99 AQI points
+- **R² Score:** ~0.98 (98%)
 - **Very stable** on validation  
 - **Fast inference** in Streamlit  
 
