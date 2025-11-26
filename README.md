@@ -67,8 +67,8 @@ The dataset features include:
 
 ## 🧠 Model Details
 
-- **Model Type:** XGBoost Regressor
-- **Model Size:** <1 MB (aqi_encoder.pkl (~263 KB) + encoders.pkl (~200 KB))
+- **Model Type:** `XGBoost Regressor`
+- **Model Size:** `<1 MB` (aqi_encoder.pkl (~263 KB) + encoders.pkl (~200 KB))
 - **Training Code:** `aqi_notebook.ipynb`
 
 ### **Input Features**
