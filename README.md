@@ -1,4 +1,4 @@
-# 📘 Global Air Quality Prediction -- AQI Predicto
+# 📘 Global Air Quality Prediction -- AQI Predictors
 
 [🚀 **Live Demo**](https://global-air-quality-prediction-nwkngwlkm7aq4apouo7mcp.streamlit.app/)
 
